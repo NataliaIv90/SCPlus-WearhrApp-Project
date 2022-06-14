@@ -118,6 +118,20 @@ h2 {
   margin: 10px 0px 10px 15px;
 }
 
+.footer-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 1px 3px;
+  transition: all 150ms ease-in;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 1px 3px;
+}
+
 #search-bar-wrap {
   margin: 15px 0px 10px 1px;
   padding: 0px;
@@ -214,17 +228,12 @@ button:hover {
   margin: 7px;
 }
 
-#footer-link {
+#linkedin-footer-link:hover {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.4);
-  padding: 1px 3px;
-}
-
-#footer-link:hover {
   color: rgba(0, 0, 0, 0.8);
   background: linear-gradient(
-    rgba(0, 0, 255, 0.5) 30%,
-    rgba(255, 255, 0, 0.5) 80%
+    rgba(167, 167, 255, 0.5) 30%,
+    rgba(255, 238, 0, 0.5) 80%
   );
   border-radius: 5px;
 }
