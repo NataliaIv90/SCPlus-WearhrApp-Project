@@ -101,6 +101,28 @@ function changeLocation(event) {
   }
 }
 
+// Current Geolocation weather
+function showPositionWeather(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+
+  let inputLocation = document.querySelector("#search-city-input");
+
+  const apiKey = "bd6a33bf1ae4ff07cbfe080ca9b11f66";
+  const units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showWeather);
+  console.log(apiUrl);
+}
+
+function currentPositionWeather(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPositionWeather);
+}
+
+let geolocationButton = document.querySelector("#current-location-button");
+geolocationButton.addEventListener("click", currentPositionWeather);
+
 // console.log(apiUrl);
 
 const form = document.querySelector("#location-form");
