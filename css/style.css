@@ -163,16 +163,20 @@ h2 {
   vertical-align: top;
 }
 
-#scale-link {
+.scale-link {
   font-weight: 400;
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.4);
 }
 
-#scale-link :hover {
+.scale-link.active {
   color: #000;
-  text-decoration: underline;
+  cursor: default;
+}
+
+.scale-link.active:hover {
+  text-decoration: none;
 }
 
 #weather-forecast-wrapper {

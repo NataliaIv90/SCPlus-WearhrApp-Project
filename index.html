@@ -64,11 +64,12 @@
 
           <div id="current-weather-top">
             <h1 id="cityName"></h1>
+
             <h2>
               <strong id="temperature"></strong>
               <span id="temperature-scale">
-                <a href="#" class="active scale-link">℃</a> |
-                <a href="#" class="scale-link">℉</a>
+                <a href="#" class="scale-link active" id="celcius-link">℃</a> |
+                <a href="#" class="scale-link" id="fahrenheit-link">℉</a>
               </span>
             </h2>
           </div>
@@ -87,23 +88,15 @@
 
             <!-- center part -->
 
-            <li class="current-weather-details" id="current-weather-icon">
-              <img />
-            </li>
+            <li class="current-weather-details" id="current-weather-icon"></li>
 
             <!-- right side -->
 
             <li class="current-weather-details">
               <ul class="current-weather-font">
-                <li>
-                  Clouds:
-                  <span id="clouds"> </span>
-                </li>
-                <li>Wind: <span id="wind"> </span></li>
-                <li>
-                  Humidity:
-                  <span id="hymidity"> </span>
-                </li>
+                <li>Clouds: <span id="clouds"> </span>%</li>
+                <li>Wind: <span id="wind"> </span>km/h</li>
+                <li>Humidity: <span id="hymidity"> </span>%</li>
               </ul>
             </li>
           </ul>
@@ -115,86 +108,81 @@
           <ul>
             <li>
               <div class="row future-weather day1">
-                <div class="col-2 left" id="day">Fri</div>
-                <div class="col-2" id="date">13/05</div>
+                <div class="col-2 left day">Fri</div>
+                <div class="col-2 date">13/05</div>
                 <div class="col-3">
                   <img
-                    class="forecast-icon"
-                    id="icon"
+                    class="forecast-icon icon"
                     src="images/animated/cloudy.svg"
                     alt=""
                   />
                 </div>
-                <div class="col-2" id="day-temperature">+5℃</div>
-                <div class="col-2" id="night-temperature">+15℃</div>
+                <div class="col-2 day-temperature">+5℃</div>
+                <div class="col-2 night-temperature">+15℃</div>
               </div>
             </li>
 
             <li>
               <div class="row future-weather day2">
-                <div class="col-2 left" id="day">Sat</div>
-                <div class="col-2" id="date">14/05</div>
+                <div class="col-2 left day">Sat</div>
+                <div class="col-2 date">14/05</div>
                 <div class="col-3">
                   <img
                     src="images/animated/rainy-3.svg"
-                    id="icon"
-                    class="forecast-icon"
+                    class="forecast-icon icon"
                     alt=""
                   />
                 </div>
-                <div class="col-2" id="day-temperature">+5℃</div>
-                <div class="col-2" id="night-temperature">+15℃</div>
+                <div class="col-2 day-temperature">+5℃</div>
+                <div class="col-2 night-temperature">+15℃</div>
               </div>
             </li>
 
             <li>
               <div class="row future-weather day3">
-                <div class="col-2 left" id="day">Sun</div>
-                <div class="col-2" id="date">15/05</div>
+                <div class="col-2 left day">Sun</div>
+                <div class="col-2 date">15/05</div>
                 <div class="col-3">
                   <img
-                    id="icon"
                     src="images/animated/day.svg"
-                    class="forecast-icon"
+                    class="forecast-icon icon"
                     alt=""
                   />
                 </div>
-                <div class="col-2" id="day-temperature">+5℃</div>
-                <div class="col-2" id="night-temperature">+15℃</div>
+                <div class="col-2 day-temperature">+5℃</div>
+                <div class="col-2 night-temperature">+15℃</div>
               </div>
             </li>
 
             <li>
               <div class="row future-weather day4">
-                <div class="col-2 left" id="day">Mon</div>
-                <div class="col-2" id="date">16/05</div>
+                <div class="col-2 left day">Mon</div>
+                <div class="col-2 date">16/05</div>
                 <div class="col-3">
                   <img
                     src="images/animated/thunder.svg"
-                    class="forecast-icon"
-                    id="icon"
+                    class="forecast-icon icon"
                     alt=""
                   />
                 </div>
-                <div class="col-2" id="day-temperature">+5℃</div>
-                <div class="col-2" id="night-temperature">+15℃</div>
+                <div class="col-2 day-temperature">+5℃</div>
+                <div class="col-2 night-temperature">+15℃</div>
               </div>
             </li>
 
             <li>
               <div class="row future-weather day5">
-                <div class="col-2 left" id="day">Tue</div>
-                <div class="col-2" id="date">16/05</div>
+                <div class="col-2 left day">Tue</div>
+                <div class="col-2 date">16/05</div>
                 <div class="col-3">
                   <img
                     src="images/animated/snowy-4.svg"
                     alt=""
-                    id="icon"
-                    class="forecast-icon"
+                    class="forecast-icon icon"
                   />
                 </div>
-                <div class="col-2" id="day-temperature">+5℃</div>
-                <div class="col-2" id="night-temperature">+15℃</div>
+                <div class="col-2 day-temperature">+5℃</div>
+                <div class="col-2 night-temperature">+15℃</div>
               </div>
             </li>
           </ul>
