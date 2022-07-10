@@ -62,14 +62,15 @@
         <div id="current-weather" class="plain-border">
           <!-- City name + current temperature           -->
 
-          <div class="row" id="current-weather-top">
-            <div class="col-9" id="current-weather-city">
-              <h1 id="cityName">Khmel'nytsky</h1>
-            </div>
-            <div class="col-3" id="current-weather-temperature">
-              <br />
-              <h2 id="temperature">24℃</h2>
-            </div>
+          <div id="current-weather-top">
+            <h1 id="cityName"></h1>
+            <h2>
+              <strong id="temperature"></strong>
+              <span id="temperature-scale">
+                <a href="#" class="active scale-link">℃</a> |
+                <a href="#" class="scale-link">℉</a>
+              </span>
+            </h2>
           </div>
 
           <!-- Current weather details -->
@@ -78,53 +79,30 @@
             <!-- Left side -->
 
             <li class="current-weather-details">
-              <ul>
-                <li class="current-weather-font" id="currentDay">Thursday</li>
-                <li class="current-weather-font" id="currentDate">
-                  12.05.2022 21:40
-                </li>
+              <ul class="current-weather-font">
+                <li id="currentDay"></li>
+                <li id="currentDate"></li>
               </ul>
             </li>
 
             <!-- center part -->
 
             <li class="current-weather-details" id="current-weather-icon">
-              <img
-                src="images/rain.svg"
-                id="weather-icon"
-                alt="rainy weather"
-              />
+              <img />
             </li>
 
             <!-- right side -->
 
             <li class="current-weather-details">
-              <ul>
+              <ul class="current-weather-font">
                 <li>
-                  <div class="row">
-                    <div class="col-7 current-weather-font right">Clouds:</div>
-                    <div class="col-5 current-weather-font left" id="clouds">
-                      48%
-                    </div>
-                  </div>
+                  Clouds:
+                  <span id="clouds"> </span>
                 </li>
+                <li>Wind: <span id="wind"> </span></li>
                 <li>
-                  <div class="row">
-                    <div class="col-7 current-weather-font right">Wind:</div>
-                    <div class="col-5 current-weather-font left" id="wind">
-                      7km/h
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="row">
-                    <div class="col-7 current-weather-font right">
-                      Humidity:
-                    </div>
-                    <div class="col-5 current-weather-font left" id="hymidity">
-                      80%
-                    </div>
-                  </div>
+                  Humidity:
+                  <span id="hymidity"> </span>
                 </li>
               </ul>
             </li>
@@ -246,6 +224,6 @@
         </div>
       </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/scriptNew.js"></script>
   </body>
 </html>

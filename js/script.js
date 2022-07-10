@@ -23,7 +23,7 @@ function changeTemperature(responce) {
   updateValue("#cityName", location);
 
   let currentTemperature = Math.round(responce.data.main.temp);
-  currentTemperature = `${currentTemperature}℃`;
+  currentTemperature = `${currentTemperature}`;
   updateValue("#temperature", currentTemperature);
 
   let currentHymidity = `${responce.data.main.humidity}%`;
@@ -36,31 +36,41 @@ function changeTemperature(responce) {
   let currentClouds = `${responce.data.clouds.all}%`;
   updateValue("#clouds", currentClouds);
 
-  const weatherDescriptionIcon = {
-    "clear sky": "clearSky.svg",
-    "few clouds": "clearSky.svg",
-    "scattered clouds": "sunAndClouds.svg",
-    "broken clouds": "sunAndClouds.svg",
-    "overcast clouds": "clouds.svg",
-    "shower rain": "showerRain.svg",
-    "light rain": "showerRain.svg",
-    rain: "rain.svg",
-    thunderstorm: "thunderstorm.svg",
-    snow: "snow.svg",
-    mist: "mist.svg",
-    "overcast clouds": "clouds.svg",
-  };
+  // const weatherDescriptionIcon = {
+  //   "clear sky": "clearSky.svg",
+  //   "few clouds": "clearSky.svg",
+  //   "scattered clouds": "sunAndClouds.svg",
+  //   "broken clouds": "sunAndClouds.svg",
+  //   "overcast clouds": "clouds.svg",
+  //   "shower rain": "showerRain.svg",
+  //   "light rain": "showerRain.svg",
+  //   rain: "rain.svg",
+  //   thunderstorm: "thunderstorm.svg",
+  //   snow: "snow.svg",
+  //   mist: "mist.svg",
+  //   "overcast clouds": "clouds.svg",
+  // };
 
-  let weatherIconKey = responce.data.weather[0].description;
-  let weatherIcon = `<img
-      src="images/${weatherDescriptionIcon[weatherIconKey]}"
-      id="weather-icon"
-      alt="${weatherIconKey}"
-    />`;
-  updateValue("#current-weather-icon", weatherIcon);
+  // let weatherIconKey = responce.data.weather[0].description;
+  // let weatherIcon = `<img
+  //     src="images/${weatherDescriptionIcon[weatherIconKey]}"
+  //     id="weather-icon"
+  //     alt="${weatherIconKey}"
+  //   />`;
+  // updateValue("#current-weather-icon", weatherIcon);
 
   // weatherIcon = `<img src="images/${weatherIcon}" id="weather-icon" alt="rainy weather" />`;
   // updateValue("#current-weather-icon", weatherIcon);
+
+  let weatherIconDescription = responce.data.weather[0].description;
+  let weatherIcon = responce.data.weather[0].icon;
+
+  weatherIcon = `<img
+      src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png"
+      id="weather-icon"
+      alt="${weatherIconDescription}"
+    />`;
+  updateValue("#current-weather-icon", weatherIcon);
 }
 
 function currentTime() {
@@ -180,9 +190,20 @@ function showPositionWeather(position) {
 }
 
 function currentPositionWeather(event) {
-  event.submitDefault;
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPositionWeather);
 }
 
 let geolocationButton = document.querySelector("#current-location-button");
 geolocationButton.addEventListener("click", currentPositionWeather);
+
+function defaultTemperature() {
+  curLocation = "Kyiv";
+  const apiKey = "bd6a33bf1ae4ff07cbfe080ca9b11f66";
+  const units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${curLocation}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(changeTemperature);
+  console.log(apiUrl);
+}
+
+defaultTemperature();
