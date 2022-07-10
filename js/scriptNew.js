@@ -1,3 +1,5 @@
+const apiKey = "bd6a33bf1ae4ff07cbfe080ca9b11f66";
+
 function formatDate(value) {
   if (value < 10) {
     value = `0${value}`;
@@ -83,10 +85,25 @@ function showWeather(responce) {
   updateValue("#current-weather-icon", weatherIcon);
 }
 
-const apiKey = "bd6a33bf1ae4ff07cbfe080ca9b11f66";
-let units = "metric";
-let curLocation = "Kyiv";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${curLocation}&appid=${apiKey}&units=${units}`;
-console.log(apiUrl);
-axios.get(apiUrl).then(showWeather);
+function search(city) {
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showWeather);
+}
+
+function changeLocation(event) {
+  event.preventDefault();
+  let inputLocation = document.querySelector("#search-city-input");
+  console.log(inputLocation.value);
+  if (inputLocation.value.length > 0) {
+    search(inputLocation.value);
+  }
+}
+
 // console.log(apiUrl);
+
+const form = document.querySelector("#location-form");
+form.addEventListener("submit", changeLocation);
+
+search("Kyiv");
