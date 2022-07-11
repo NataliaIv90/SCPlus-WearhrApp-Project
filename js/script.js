@@ -41,12 +41,21 @@ function currentTime() {
   ];
 
   const curDay = days[now.getDay()];
+
   let curDate = now.getDate();
-  formatDate(curDate);
+  if (curDate < 10) {
+    curDate = `0{curDate}`;
+  }
+  // formatDate(curDate);
   let curHours = now.getHours();
-  formatDate(curHours);
+  if (curHours < 10) {
+    curHours = `0{curHours}`;
+  }
   let curMinutes = now.getMinutes();
-  formatDate(curMinutes);
+  if (curMinutes < 10) {
+    curMinutes = `0${curMinutes}`;
+  }
+  // formatDate(curMinutes);
 
   const cDate = `
   ${curDate} 
