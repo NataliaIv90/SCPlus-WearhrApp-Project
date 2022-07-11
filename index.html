@@ -61,19 +61,25 @@
       <div>
         <div id="current-weather" class="plain-border">
           <!-- City name + current temperature           -->
-
           <div id="current-weather-top">
-            <h1 id="cityName"></h1>
-
-            <h2>
-              <strong id="temperature"></strong>
-              <span id="temperature-scale">
-                <a href="#" class="scale-link active" id="celcius-link">℃</a> |
-                <a href="#" class="scale-link" id="fahrenheit-link">℉</a>
-              </span>
-            </h2>
+            <div class="row">
+              <div class="col-7">
+                <h1 id="cityName"></h1>
+              </div>
+              <div class="col-5">
+                <h2>
+                  <strong id="temperature"></strong>
+                  <span id="temperature-scale">
+                    <a href="#" class="scale-link active" id="celcius-link"
+                      >℃</a
+                    >
+                    |
+                    <a href="#" class="scale-link" id="fahrenheit-link">℉</a>
+                  </span>
+                </h2>
+              </div>
+            </div>
           </div>
-
           <!-- Current weather details -->
 
           <ul id="current-weather-bottom">
